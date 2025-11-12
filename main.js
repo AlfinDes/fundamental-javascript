@@ -94,11 +94,12 @@ menu.forEach (item => {
 const daftarMenu = menu.map(item => item.nama);
 console.log(daftarMenu);
 
-const totalHarga = menu.reduce((total, item) => {
+const hargamenu = menu.reduce((total, item) => {
   return total + (item.harga * item.jumlah);
 }, 0);
 
 console.log(`Total Belanja: Rp ${totalHarga}`);
+
 
 let nilai = [
     90,85,80,70,65
@@ -121,6 +122,20 @@ if (rataRata >= 75) {
   console.log("Tidak lulus ujian")
   }
 
+let totalHarga = 250000 ;
+let persenDiskon = 0;
+if (totalHarga >= 500000 ){
+  persenDiskon = 20;
+} else if ( totalHarga >= 20000){
+  persenDiskon = 10;
+} else {
+  persenDiskon = 0;
+}
 
+let jumlahDiskon = totalHarga * (persenDiskon / 100);
+let hargaAkhir = totalHarga - jumlahDiskon;
 
-
+console.log ("total harga: " + totalHarga);
+console.log ("diskon: " + persenDiskon + "%");
+console.log ("jumlah diskon: " + jumlahDiskon);
+console.log ("harga akhir: " + hargaAkhir);
