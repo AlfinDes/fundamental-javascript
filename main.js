@@ -139,3 +139,48 @@ console.log ("total harga: " + totalHarga);
 console.log ("diskon: " + persenDiskon + "%");
 console.log ("jumlah diskon: " + jumlahDiskon);
 console.log ("harga akhir: " + hargaAkhir);
+
+
+let data = ["H", "H", "S", "A", "H", "I", "C"];
+
+for (let i = 0; i < data.length; i++) {
+switch (data [i]) {
+  case "H":
+      console.log(i+1, "Status: Hadir"); break;
+    case "S":
+      console.log(i+1, "Status: Sakit"); break;
+    case "A":
+      console.log(i+1, "Status: Alpha"); break;
+    case "I":
+      console.log(i+1, "Status: Izin"); break;
+    default:
+      console.log(i+1, "Status tidak diketahui");
+
+}
+}
+
+let tipeLayanan = "Reguler";
+let jarak = 10;
+let baseFee;
+let biayaPerkm;
+
+switch (tipeLayanan){
+  case "Reguler":
+    baseFee = 8000;
+    biayaPerkm = 1500; break;
+  
+  case "kilat" :
+    baseFee = 15000;
+    biayaPerkm = 3000; break;
+  default:
+    console.log("Tipe layanan tidak ada")
+    baseFee = 0;
+    biayaPerkm = 0;
+}
+
+let totalBiaya = baseFee + (biayaPerkm * jarak);
+
+console.log(`Layanan: ${tipeLayanan}`);
+console.log(`Jarak: ${jarak} km`);
+console.log(`Total biaya: Rp ${totalBiaya}`);
+
