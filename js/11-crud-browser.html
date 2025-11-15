@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Todo App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .input-section {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #5568d3;
+    }
+
+    .todo-list {
+      list-style: none;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: all 0.3s;
+    }
+
+    .todo-item:hover {
+      background: #e9ecef;
+      transform: translateX(5px);
+    }
+
+    .todo-item.completed {
+      opacity: 0.6;
+    }
+
+    .todo-item.completed .todo-text {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .todo-text {
+      flex: 1;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .btn-complete {
+      padding: 5px 10px;
+      background: #28a745;
+      font-size: 14px;
+    }
+
+    .btn-delete {
+      padding: 5px 10px;
+      background: #dc3545;
+      font-size: 14px;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #999;
+      padding: 40px;
+      font-size: 18px;
+    }
+
+    .stats {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Todo App - CRUD with LocalStorage</h1>
+    
+    <div class="input-section">
+      <input 
+        type="text" 
+        id="todoInput" 
+        placeholder="What needs to be done?"
+        onkeypress="if(event.key==='Enter') addTodo()"
+      >
+      <button onclick="addTodo()">Add Todo</button>
+    </div>
+
+    <ul class="todo-list" id="todoList"></ul>
+
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <script>
+    /* 
+    ================================================================================
+     TOPIC 11 — CRUD OPERATIONS (BROWSER VERSION)
+     Learn: LocalStorage, DOM Manipulation, CRUD with JavaScript
+    ================================================================================
+
+    💬 UNDERSTAND THE CONCEPT FIRST - Ask AI:
+    --------------------------------------------------------------------------------
+    "I'm learning CRUD operations with localStorage. Before I start coding,
+    help me understand:
+
+    1. What is CRUD in simple terms?
+    2. How does localStorage API work in browsers?
+    3. Show me how to:
+       - Save data: localStorage.setItem()
+       - Get data: localStorage.getItem()
+       - Remove data: localStorage.removeItem()
+    4. Why do we need JSON.stringify() and JSON.parse()?
+
+    Please use BOOK LIBRARY or CONTACT LIST examples, NOT todo apps.
+    Keep it simple and beginner-friendly!"
+    --------------------------------------------------------------------------------
+
+    ⚠️  IMPORTANT: Understand the concepts above BEFORE attempting the exercises!
+    */
+
+    // Initialize todos from localStorage
+    let todos = JSON.parse(localStorage.getItem('todos')) || [];
+
+    /*
+    --------------------------------------------------------------------------------
+     EXERCISE 11.1: CREATE - Add New Todo
+    --------------------------------------------------------------------------------
+     Buat function dengan nama: addTodo()
+     
+     Function ini harus:
+     - Ambil value dari input dengan id "todoInput"
+     - Buat todo object baru dengan struktur:
+       { id: Date.now(), title: string, completed: false }
+     - Push ke array todos
+     - Save ke localStorage dengan key 'todos'
+     - Panggil renderTodos() untuk render ulang
+     - Clear input field
+
+     Expected Result:
+     Todo baru muncul di list
+    --------------------------------------------------------------------------------
+    */
+    
+    // Write your code here
+
+
+    /*
+    --------------------------------------------------------------------------------
+     EXERCISE 11.2: READ - Render All Todos
+    --------------------------------------------------------------------------------
+     Buat function dengan nama: renderTodos()
+     
+     Function ini harus:
+     - Loop semua todos
+     - Buat HTML untuk setiap todo dengan button complete & delete
+     - Tampilkan di element dengan id "todoList"
+     - Panggil updateStats() di akhir
+     - Jika todos kosong, tampilkan empty state
+
+     Expected Result:
+     Semua todos ter-render dengan button complete & delete
+    --------------------------------------------------------------------------------
+    */
+    
+    // Write your code here
+
+
+    /*
+    --------------------------------------------------------------------------------
+     EXERCISE 11.3: UPDATE - Toggle Complete Status
+    --------------------------------------------------------------------------------
+     Buat function dengan nama: toggleComplete(id)
+     
+     Function ini harus:
+     - Cari todo berdasarkan id
+     - Toggle completed status (true ↔ false)
+     - Save ke localStorage
+     - Panggil renderTodos() untuk render ulang
+
+     Expected Result:
+     Todo berubah jadi strikethrough atau sebaliknya
+    --------------------------------------------------------------------------------
+    */
+    
+    // Write your code here
+
+
+    /*
+    --------------------------------------------------------------------------------
+     EXERCISE 11.4: DELETE - Remove Todo
+    --------------------------------------------------------------------------------
+     Buat function dengan nama: deleteTodo(id)
+     
+     Function ini harus:
+     - Filter todos, exclude yang id-nya match
+     - Save ke localStorage
+     - Panggil renderTodos() untuk render ulang
+
+     Expected Result:
+     Todo hilang dari list
+    --------------------------------------------------------------------------------
+    */
+    
+    // Write your code here
+
+
+    /*
+    --------------------------------------------------------------------------------
+     EXERCISE 11.5: Utility - Update Stats
+    --------------------------------------------------------------------------------
+     Buat function dengan nama: updateStats()
+     
+     Function ini harus menampilkan di element id "stats":
+     - Total todos
+     - Completed todos
+     - Remaining todos
+
+     Expected Result:
+     "Total: 5 | Completed: 2 | Remaining: 3"
+    --------------------------------------------------------------------------------
+    */
+    
+    // Write your code here
+
+
+    /*
+    ================================================================================
+     BONUS CHALLENGE 11: Advanced Features
+    ================================================================================
+     Tambahkan fitur-fitur berikut:
+     
+     1. Edit todo (double click pada todo untuk edit)
+     2. Clear all completed todos (button baru)
+     3. Filter todos: All / Active / Completed
+     4. Search/filter todos berdasarkan keyword
+     5. Mark all as complete/incomplete
+     
+     Silakan berkreasi dengan UI dan functionality!
+    ================================================================================
+    */
+
+
+    // Initialize app - panggil renderTodos() saat halaman load
+    // Write your code here
+  </script>
+</body>
+</html>
