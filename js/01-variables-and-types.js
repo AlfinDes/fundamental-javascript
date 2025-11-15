@@ -18,6 +18,8 @@
 */
 
 // Write your code here
+let costumerName = "John";
+console.log ("Selamat Datang",costumerName);
 
 
 
@@ -36,7 +38,11 @@
 */
 
 // Write your code here
+let roti = 8000;
+let susu = 5000;
 
+let total = (roti) + (susu);
+console.log(`Total: Rp${total}`);
 
 
 
@@ -56,7 +62,13 @@
 */
 
 // Write your code here
+let isMember = "Member";
 
+if (isMember){
+    console.log("Anda mendaoatkan diskon member")
+} else {
+    console.log("Harga normal, bukan member")
+}
 
 
 
