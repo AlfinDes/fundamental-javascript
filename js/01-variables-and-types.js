@@ -19,7 +19,7 @@
 
 // Write your code here
 let costumerName = "John";
-console.log ("Selamat Datang",costumerName);
+console.log ("Selamat Datang",costumerName)
 
 
 
@@ -42,7 +42,7 @@ let roti = 8000;
 let susu = 5000;
 
 let total = (roti) + (susu);
-console.log(`Total: Rp${total}`);
+console.log(`Total: Rp${total}`)
 
 
 
@@ -89,6 +89,13 @@ if (isMember){
 */
 
 // Write your code here
+let umur = 20;
+
+if (umur >=18){
+    console.log("Dewasa")
+} else {
+    console.log("Anak-anak")
+}
 
 
 
@@ -107,7 +114,10 @@ if (isMember){
 */
 
 // Write your code here
+let judulFilm = "Film avengers";
+let durasiMenit = 120;
 
+console.log(`${judulFilm} berdurasi ${durasiMenit}menit`);
 
 
 
@@ -134,3 +144,24 @@ if (isMember){
 */
 
 // Write your code here
+let pembeli = "Sarah";
+let roti1 = 8000;
+let qty = 2;
+let susu2 = 5000;
+let isMember1 = true;
+let cekDiskon = 0.1;
+let potongan = 0;
+
+let totalBelanja1 = (roti1 * qty) + susu2;
+
+if (isMember1){
+  potongan = totalBelanja1 * cekDiskon;
+  totalBayar1 = totalBelanja1 - potongan;
+  
+} else {
+    console.log("Bukan member")
+} 
+console.log(`Pembeli: ${pembeli}`)
+   console.log(`total: ${totalBelanja1}`)
+   console.log("Diskon: Rp", potongan)
+   console.log("Total bayar: Rp", totalBayar1)
