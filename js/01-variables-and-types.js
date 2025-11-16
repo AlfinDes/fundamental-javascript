@@ -148,7 +148,7 @@ console.log(`${judulFilm} berdurasi ${durasiMenit}menit`);
 
 // Write your code here
 let pembeli = "Sarah";
-let roti1 = "8000";
+let roti1 = 8000;
 let qty = 2;
 let susu2 = 5000;
 let isMember1 = true;
