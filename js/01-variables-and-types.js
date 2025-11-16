@@ -19,7 +19,7 @@
 
 // Write your code here
 let costumerName = "John";
-console.log ("Selamat Datang",costumerName)
+console.log("Selamat Datang", CostumerName)
 
 
 
@@ -38,11 +38,12 @@ console.log ("Selamat Datang",costumerName)
 */
 
 // Write your code here
-let roti = 8000;
+let roti = "8000";
 let susu = 5000;
 
 let total = (roti) + (susu);
 console.log(`Total: Rp${total}`)
+
 
 
 
@@ -64,11 +65,12 @@ console.log(`Total: Rp${total}`)
 // Write your code here
 let isMember = "Member";
 
-if (isMember){
+if (IsMember){
     console.log("Anda mendaoatkan diskon member")
 } else {
     console.log("Harga normal, bukan member")
 }
+
 
 
 
@@ -89,7 +91,7 @@ if (isMember){
 */
 
 // Write your code here
-let umur = 20;
+let umur = "20";
 
 if (umur >=18){
     console.log("Dewasa")
@@ -117,7 +119,8 @@ if (umur >=18){
 let judulFilm = "Film avengers";
 let durasiMenit = 120;
 
-console.log(`${judulFilm} berdurasi ${durasiMenit}menit`);
+console.log('${judulFilm} berdurasi ${durasiMenit}menit');
+
 
 
 
@@ -145,7 +148,7 @@ console.log(`${judulFilm} berdurasi ${durasiMenit}menit`);
 
 // Write your code here
 let pembeli = "Sarah";
-let roti1 = 8000;
+let roti1 = "8000";
 let qty = 2;
 let susu2 = 5000;
 let isMember1 = true;
@@ -154,7 +157,7 @@ let potongan = 0;
 
 let totalBelanja1 = (roti1 * qty) + susu2;
 
-if (isMember1){
+if (ismember1){
   potongan = totalBelanja1 * cekDiskon;
   totalBayar1 = totalBelanja1 - potongan;
   
@@ -162,6 +165,6 @@ if (isMember1){
     console.log("Bukan member")
 } 
 console.log(`Pembeli: ${pembeli}`)
-   console.log(`total: ${totalBelanja1}`)
-   console.log("Diskon: Rp", potongan)
-   console.log("Total bayar: Rp", totalBayar1)
+console.log(`total: ${totalBelanja1}`)
+console.log("Diskon: Rp", potongan)
+console.log("Total bayar: Rp", totalBayar1)
