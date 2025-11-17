@@ -43,6 +43,24 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let a = 15;
+let b = 7;
+
+let total = a + b;
+console.log(total)
+
+let pengurangan = a - b;
+console.log(pengurangan)
+
+let perkalian = a * b;
+console.log(perkalian)
+
+let pembagian = a / b;
+console.log(pembagian)
+
+let sisa = a % b;
+console.log (sisa)
+
 
 
 
@@ -68,6 +86,12 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let produkA = 500000;
+let produkB = 45000;
+
+console.log(produkA > produkB)
+console.log(produkA < produkB)
+console.log(produkB <= produkA)
 
 
 
@@ -91,8 +115,16 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let username = "admin";
+let password = "12345";
+let usernameFromDB = "admin";
+let passwordFromDB = "12345";
 
-
+if (username === username && password === passwordFromDB){
+  console.log("Login Berhasil")
+} else {
+  console.log("Login Gagal")
+}
 
 
 /*
@@ -115,9 +147,22 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let totalBelanja = 80000;
+let isMember = true;
 
+function cekEligibilityDiskon(totalBelanja, isMember){
+  if (totalBelanja >= 100000 || isMember) {
+    return "Mendapat diskon";
+  } else {
+    return "Tidak dapat diskon"
+  }
+}
 
+let hasil = cekEligibilityDiskon(totalBelanja, isMember);
 
+console.log("TotalBelanja:", totalBelanja)
+console.log("Is Member:", isMember)
+console.log(hasil)
 
 /*
 --------------------------------------------------------------------------------
@@ -136,9 +181,10 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let stockProduk = "5";
+let status = stockProduk >= Number (5) ? "Tersedia" : "Habis";
 
-
-
+console.log("stok = ", + stockProduk, status)
 
 /*
 ================================================================================
@@ -161,3 +207,17 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let nilai = 85;
+
+
+if (nilai >=90 && nilai <= 100) {
+  console.log ("nilai:", nilai, "Grade A")
+} else if (nilai >= 75 && nilai <= 89) {
+  console.log ("nilai:", nilai, "Grade: B")
+} else if (nilai >= 65 && nilai <= 74) {
+  console.log ("nilai:", nilai, "Grade: C")
+} else if (nilai >= 60 && nilai <= 64) {
+  console.log ("nilai:",nilai, "Grade: D")
+} else if (nilai >= 0 && nilai <= 60) {
+  console.log ("nilai:", nilai, "Grade: E")
+}
