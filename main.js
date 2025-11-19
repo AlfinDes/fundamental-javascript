@@ -145,7 +145,7 @@ let data = ["H", "H", "S", "A", "H", "I", "C"];
 
 for (let i = 0; i < data.length; i++) {
 switch (data [i]) {
-  case "H":
+    case "H":
       console.log(i+1, "Status: Hadir"); break;
     case "S":
       console.log(i+1, "Status: Sakit"); break;

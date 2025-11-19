@@ -35,8 +35,14 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let cuaca = "panas";
+let suhu = 35; 
 
-
+if (cuaca === "panas" && suhu >= 35 ) {
+    console.log ( "suhu =", suhu, cuaca)
+} else {
+    console.log ("sejuk")
+}
 
 
 /*
@@ -56,8 +62,19 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let umur = 25;
 
-
+if (umur >= 0 && umur <= 5){
+    console.log("Balita")
+} else if (umur >= 6 && umur <= 12){
+    console.log("Anak-anak")
+} else if (umur >= 13 && umur <= 17){
+    console.log("Remaja")
+} else if (umur >= 18 && umur <= 60){
+    console.log("Dewasa")
+} else if (umur > 60){
+    console.log("Lansia")
+}
 
 
 /*
@@ -75,8 +92,21 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let umur1 = 20;
+let punyaKTP = true;
 
+function cekEligibilityTiket(umur1, punyaKTP){
+    if (umur1 >= 17 && punyaKTP) {
+        return "Boleh nonton film dewasa"
+    } else if (umur1 < 17){
+        return "Hanya boleh film anak-anak"
+    } else {
+        return "Bawa KTP dulu"
+    }
+}
+let hasil = cekEligibilityTiket(umur1, punyaKTP)
 
+console.log("umur:", umur1, "Punya KTP", punyaKTP, hasil)
 
 
 /*
@@ -99,8 +129,21 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let hari = [
+  "Senin",
+  "Selasa",
+  "Rabu",
+  "Kamis",
+  "Jum`at",
+  "Sabtu",
+  "Minggu",
+  "Hari tidak valid"
+];
 
-
+for (let i = 0; i < hari.length; i++){
+  console.log(i+1, hari[i])
+}
+console.log("Day:", 3, hari[2])
 
 
 /*
@@ -120,9 +163,24 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let payment = ["cash", "debit", "qris", "ewallet"];
 
-
-
+function processPayment(method){
+switch (method) {
+    case "cash":
+        console.log("Bayar di kasir"); break;
+    case "debit":
+        console.log("Gesek kartu di mesin EDC"); break;
+    case "qris":
+        console.log("Scan QR code"); break;
+    case "ewallet":
+        console.log("Buka aplikasi e-wallet"); break;
+    default:
+        console.log("Metode tidak tersedia");        
+}
+}
+console.log("method: qris" )
+processPayment(`qris`)
 
 /*
 ================================================================================
@@ -143,3 +201,30 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let saldoAwal = 1000000;
+let nominal = 300000;
+
+function tarikTunai(nominal){
+  console.log("Penarikan Tunai")
+}
+if (nominal > saldoAwal){
+  console.log("Saldo tidak cukup")
+  console.log("Saldo anda: Rp" + saldoAwal.toLocaleString('id-ID'))
+  console.log("Nominal penarikan: Rp" + nominal.toLocaleString('id-ID'))
+}
+
+if (nominal % 50000 !== 0){
+  console.log("nominal harus kelipatan Rp 50.000")
+  console.log("nominal yang anda masukan: Rp" + nominal.toLocaleString('id-ID'))
+  
+}
+
+if (nominal <= 0){
+  console.log("nominal tidak valid")
+}
+let saldo = saldoAwal;
+let  sisa = saldoAwal -= nominal;
+
+console.log("penarikan: Rp" + nominal)
+console.log("Sisa saldo: Rp" + sisa)
+
