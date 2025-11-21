@@ -126,8 +126,13 @@ console.log(kelilingLingkaran(7))
 */
 
 // Write your code here
+let harga = 100000;
+let persenDiskon = 20;
+function hitungDiskon(harga, persenDiskon){
+  return harga - (harga * persenDiskon / 100);
+}
 
-
+hitungDiskon (100000, 20);
 
 
 /*
@@ -149,3 +154,12 @@ console.log(kelilingLingkaran(7))
 */
 
 // Write your code here
+function celsiusToFahrenheit(celsius){
+  return F = (celsius * 9/5) + 32;
+}
+function fahrenheitToCelcius(fahrenheit){
+  return C = (fahrenheit- 32) * 5/9;
+}
+
+celsiusToFahrenheit(100)
+fahrenheitToCelcius(212)
