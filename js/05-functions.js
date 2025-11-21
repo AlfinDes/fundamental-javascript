@@ -36,9 +36,11 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+function greet(nama) {
+   console.log ("Hello " + nama);
+}
 
-
-
+greet("World");
 
 /*
 --------------------------------------------------------------------------------
@@ -55,9 +57,11 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+function greetUser(nickName){
+   console.log("Hello " + nickName);
+}
 
-
-
+greetUser("Alice");
 
 /*
 --------------------------------------------------------------------------------
@@ -73,7 +77,12 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+function hitungLuasPersegiPanjang (panjang, luas){
+  return panjang * luas;
+}
 
+let hasil = hitungLuasPersegiPanjang(5, 3);
+console.log(hasil)
 
 
 
@@ -94,7 +103,11 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
-
+const kelilingLingkaran = (radius) => {
+  const pi = 3.14;
+  return 2 * pi * radius; 
+}
+console.log(kelilingLingkaran(7))
 
 
 

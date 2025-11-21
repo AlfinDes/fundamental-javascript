@@ -37,9 +37,11 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-
-
+for (let i = 0; i < list.length; i++){
+  console.log(list[i])
+}
 
 /*
 --------------------------------------------------------------------------------
@@ -57,6 +59,12 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let number = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0)
+  console.log(i)
+}
 
 
 
@@ -78,7 +86,13 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let time = 10;
 
+for ( let i = 10; i >= 1; i--){
+  console.log(i)
+}
+
+console.log("Start")
 
 
 
@@ -98,9 +112,16 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let numberRahasia = 7;
+let tebakan = 1;
+let hitung = 0;
 
+while (tebakan <= 7){
+  tebakan++;
+  hitung++;
+}
 
-
+console.log("ketemu butuh" + hitung + "kali tebakan")
 
 /*
 --------------------------------------------------------------------------------
@@ -122,7 +143,20 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let attempts = ["wrong1", "wrong2", "secret123"]
+let index = 0;
 
+do {
+  let pass = attempts[index]
+  
+  if (pass !== "secret123"){
+    console.log("Password salah:" + "coba lagi")
+  } else {
+    console.log("Password benar:" + "Akses diberikan")
+  }
+
+  index++
+} while (index < attempts.length)
 
 
 
@@ -143,3 +177,12 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let num = 5;
+
+let table = `perkalian ${num}\n`;
+
+for (let i = 1; i<= 10; i++) {
+  table += `${num} X ${i} = ${num * i}\n`;
+}
+
+console.log(table)

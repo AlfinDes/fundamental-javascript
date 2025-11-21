@@ -4,11 +4,11 @@
 
 | No | Materi | Deskripsi Singkat | Progress |
 |----|-------------------------|----------------------------------------------------------------|----------|
-| 1 | Variabel & Tipe Data | var, let, const, tipe data dasar (string, number, boolean) | 🔄 |
-| 2 | Operator | Aritmatika, logika, perbandingan, assignment, ternary | ⬜ |
-| 3 | Control Flow | if/else dasar, switch sederhana | ⬜ |
-| 4 | Looping | for, while, do...while versi dasar | ⬜ |
-| 5 | Function | Function basic: parameter, return, arrow function sederhana | ⬜ |
+| 1 | Variabel & Tipe Data | var, let, const, tipe data dasar (string, number, boolean) | 🟩 |
+| 2 | Operator | Aritmatika, logika, perbandingan, assignment, ternary | 🟩 |
+| 3 | Control Flow | if/else dasar, switch sederhana | 🟩 |
+| 4 | Looping | for, while, do...while versi dasar | 🟩 |
+| 5 | Function | Function basic: parameter, return, arrow function sederhana | 🔄 |
 | 6 | Array | push/pop, forEach, search dasar | ⬜ |
 | 7 | Object | Property dasar, akses key, nested object sederhana | ⬜ |
 | 8 | DOM | querySelector, manipulasi text/style dasar | ⬜ |
