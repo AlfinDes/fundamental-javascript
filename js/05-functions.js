@@ -133,7 +133,7 @@ function hitungDiskon(harga, persenDiskon){
 }
 
 hitungDiskon (100000, 20);
-
+console.log(80000)
 
 /*
 ================================================================================
@@ -161,5 +161,5 @@ function fahrenheitToCelcius(fahrenheit){
   return C = (fahrenheit- 32) * 5/9;
 }
 
-celsiusToFahrenheit(100)
-fahrenheitToCelcius(212)
+console.log("celsiusToFahrenheit", celsiusToFahrenheit(100))
+console.log("FahrenheitToCelsius", fahrenheitToCelcius(212))
