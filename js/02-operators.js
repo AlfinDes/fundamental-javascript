@@ -46,10 +46,10 @@ Keep it simple and beginner-friendly!"
 let a = 15;
 let b = 7;
 
-let total = a + b
+let total = a + b;
 console.log(total)
 
-let pengurangan = a - B;
+let pengurangan = a - b;
 console.log(pengurangan)
 
 let perkalian = a * b;
@@ -58,7 +58,7 @@ console.log(perkalian)
 let pembagian = a / b;
 console.log(pembagian)
 
-let sisa = a % b
+let sisa = a % b;
 console.log (sisa)
 
 
@@ -86,12 +86,12 @@ console.log (sisa)
 */
 
 // Write your code here
-let produkA = 50000;
+let produkA = 500000;
 let produkB = 45000;
 
 console.log(produkA > produkB)
-console.log(produkA = produkB)
-console.log(produkb <= produkA)
+console.log(produkA < produkB)
+console.log(produkB <= produkA)
 
 
 
@@ -120,7 +120,7 @@ let password = "12345";
 let usernameFromDB = "admin";
 let passwordFromDB = "12345";
 
-if (username === usernameFromDB || password === passwordFromDB){
+if (username === username && password === passwordFromDB){
   console.log("Login Berhasil")
 } else {
   console.log("Login Gagal")
@@ -150,15 +150,15 @@ if (username === usernameFromDB || password === passwordFromDB){
 let totalBelanja = 80000;
 let isMember = true;
 
-function cekEligibilityDiskon(totalbelanja, isMember){
-  if (totalBelanja >= 100000 && isMember) {
+function cekEligibilityDiskon(totalBelanja, isMember){
+  if (totalBelanja >= 100000 || isMember) {
     return "Mendapat diskon";
   } else {
     return "Tidak dapat diskon"
   }
 }
 
-let hasil = cekEligibiltyDiskon(totalBelanja, isMember);
+let hasil = cekEligibilityDiskon(totalBelanja, isMember);
 
 console.log("TotalBelanja:", totalBelanja)
 console.log("Is Member:", isMember)
@@ -182,7 +182,7 @@ console.log(hasil)
 
 // Write your code here
 let stockProduk = "5";
-let status = stockProduk > 0 ? "Tersedia" : "Habis";
+let status = stockProduk >= Number (5) ? "Tersedia" : "Habis";
 
 console.log("stok = ", + stockProduk, status)
 
@@ -212,7 +212,7 @@ let nilai = 85;
 
 if (nilai >=90 && nilai <= 100) {
   console.log ("nilai:", nilai, "Grade A")
-} else if (nilai >= 80 || nilai <= 89) {
+} else if (nilai >= 75 && nilai <= 89) {
   console.log ("nilai:", nilai, "Grade: B")
 } else if (nilai >= 65 && nilai <= 74) {
   console.log ("nilai:", nilai, "Grade: C")
