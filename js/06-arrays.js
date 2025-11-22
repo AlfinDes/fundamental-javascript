@@ -35,7 +35,9 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let fruits = ["Apel", "Mangga", "Jeruk", "Pisang", "Anggur"];
 
+console.log(fruits[2])
 
 
 
@@ -55,7 +57,12 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let item = [];
 
+item.push("Sepatu", "Tas", "Topi");
+item.pop();
+
+console.log(item);
 
 
 
@@ -78,7 +85,11 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let prices = [10000, 25000, 15000, 30000];
 
+prices.forEach(function(prices){
+  console.log("Harga: Rp" + prices )
+});
 
 
 
@@ -97,7 +108,11 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let numbers = [5, 12, 8, 130, 44];
 
+let result = numbers.find(n => n > 10);
+
+console.log(result);
 
 
 
@@ -116,7 +131,11 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let grades = [75, 82, 60, 91, 55, 88];
 
+let results = grades.filter(n=> n > 70);
+
+console.log(results);
 
 
 
@@ -141,3 +160,15 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+ let cart = [
+   { name: "Buku", prices: 50000, qty: 2 },
+   { name: "Pulpen", prices: 5000, qty: 5 },
+   { name: "Tas", prices: 150000, qty: 1 }
+ ];
+
+let total = cart.reduce((accumulator, currentItem) => {
+    let itemTotal = currentItem.prices * currentItem.qty;
+    return accumulator + itemTotal;
+}, 0);
+
+console.log(`Total: Rp ${total}`);
