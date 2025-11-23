@@ -42,8 +42,13 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let book = {
+  title : "Harry Potter",
+  author: "J.K. Rowling",
+  year  : 1997
+}
 
-
+console.log(book.title, book.author, book.year)
 
 
 /*
@@ -64,9 +69,14 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let student = {
+  name: "Alice",
+  age:18,
+  class:12
+}
 
-
-
+console.log(student.name)
+console.log(student["name"])
 
 /*
 --------------------------------------------------------------------------------
@@ -85,6 +95,7 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+let calculator = { a, b}
 
 
 

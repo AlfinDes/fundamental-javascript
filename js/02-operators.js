@@ -90,7 +90,7 @@ let produkA = 500000;
 let produkB = 45000;
 
 console.log(produkA > produkB)
-console.log(produkA < produkB)
+console.log(produkA >= produkB)
 console.log(produkB <= produkA)
 
 
@@ -120,7 +120,7 @@ let password = "12345";
 let usernameFromDB = "admin";
 let passwordFromDB = "12345";
 
-if (username === username && password === passwordFromDB){
+if (usernameFromDB === username && password === passwordFromDB){
   console.log("Login Berhasil")
 } else {
   console.log("Login Gagal")
@@ -182,7 +182,7 @@ console.log(hasil)
 
 // Write your code here
 let stockProduk = "5";
-let status = stockProduk >= Number (5) ? "Tersedia" : "Habis";
+let status = stockProduk >=  Number (5) ? "Tersedia" : "Habis";
 
 console.log("stok = ", + stockProduk, status)
 
@@ -218,6 +218,6 @@ if (nilai >=90 && nilai <= 100) {
   console.log ("nilai:", nilai, "Grade: C")
 } else if (nilai >= 60 && nilai <= 64) {
   console.log ("nilai:",nilai, "Grade: D")
-} else if (nilai >= 0 && nilai <= 60) {
+} else if (nilai >= 0 && nilai < 60) {
   console.log ("nilai:", nilai, "Grade: E")
 }
