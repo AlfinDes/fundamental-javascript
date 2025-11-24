@@ -2,23 +2,27 @@
 
 ## 📚 JavaScript Fundamentals (1–10)
 
-| No | Materi | Deskripsi Singkat | Progress |
-|----|-------------------------|----------------------------------------------------------------|----------|
-| 1 | Variabel & Tipe Data | var, let, const, tipe data dasar (string, number, boolean) | 🟩 |
-| 2 | Operator | Aritmatika, logika, perbandingan, assignment, ternary | 🟩 |
-| 3 | Control Flow | if/else dasar, switch sederhana | 🟩 |
-| 4 | Looping | for, while, do...while versi dasar | 🟩 |
-| 5 | Function | Function basic: parameter, return, arrow function sederhana | 🟩 |
-| 6 | Array | push/pop, forEach, search dasar | 🟩 |
-| 7 | Object | Property dasar, akses key, nested object sederhana | 🔄 |
-| 8 | DOM | querySelector, manipulasi text/style dasar | ⬜ |
-| 9 | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | ⬜ |
-| 10 | API Fetch | Fetch real public APIs, working with JSON data | ⬜ |
+| No | Materi | Deskripsi Singkat | Student | Teacher |
+|----|-------------------------|----------------------------------------------------------------|----------|-----------|
+| 1  | Variabel & Tipe Data | var, let, const, tipe data dasar (string, number, boolean) | 🟩       | 🏆        |
+| 2  | Operator | Aritmatika, logika, perbandingan, assignment, ternary | 2.1 ✅, 2.2 ✅❌✅, 2.3 ❌, 2.4 ✅, 2.5 ❌, Bonus ❌       |           |
+| 3  | Control Flow | if/else dasar, switch sederhana | 🟩       |           |
+| 4  | Looping | for, while, do...while versi dasar | 🟩       |           |
+| 5  | Function | Function basic: parameter, return, arrow function sederhana | 🟩       |           |
+| 6  | Array | push/pop, forEach, search dasar | 🟩       |           |
+| 7  | Object | Property dasar, akses key, nested object sederhana | 🔄       |           |
+| 8  | DOM | querySelector, manipulasi text/style dasar | ⬜       |           |
+| 9  | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | ⬜       |           |
+| 10 | API Fetch | Fetch real public APIs, working with JSON data | ⬜       |           |
 
 ### Legend
-- 🟩 **Done** → Selesai
-- 🔄 **In Progress** → Sedang dipelajari
-- ⬜ **Belum dikerjakan**
+**Progress**  
+- 🏆 Passed → Lulus  
+- 🟩 Done → Selesai  
+- 🔄 In Progress → Sedang dipelajari  
+- ⬜ Belum dikerjakan
+- ✅ Soal benar
+- ❌ Soal salah
 
 ---
 
