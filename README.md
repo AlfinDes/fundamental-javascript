@@ -11,9 +11,9 @@
 | 4 | Looping | for, while, do...while versi dasar | 🟩 |
 | 5 | Function | Function basic: parameter, return, arrow function sederhana | 🟩 |
 | 6 | Array | push/pop, forEach, search dasar | 🟩 |
-| 7 | Object | Property dasar, akses key, nested object sederhana |  |
+| 7 | Object | Property dasar, akses key, nested object sederhana | 🟩 |
 | 8 | DOM | querySelector, manipulasi text/style dasar | 🔄 |
-| 9 | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | ⬜ |
+| 9 | Asynchronous JavaScript | setTimeout & promise basic untuk pemula |  |
 | 10 | API Fetch | Fetch real public APIs, working with JSON data | ⬜ |
 =======
 | No | Materi | Deskripsi Singkat | Student | Teacher |
