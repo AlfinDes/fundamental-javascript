@@ -95,9 +95,25 @@ console.log(student["name"])
 */
 
 // Write your code here
-let calculator = { a, b}
+let calculator = {
+  a: 0,
+  b: 0,
 
+  add: function (x, y) {
+    this.a = x
+    this.b = y
+  },
+  multiplay: function (){
+    console.log("hasil: ", this.a * this.b)
+  },
+  tambah: function (){
+    console.log("hasil: ", this.a + this.b)
+  },
+}
 
+calculator.add(5, 3)
+calculator.tambah()
+calculator.multiplay()
 
 
 /*
@@ -123,7 +139,15 @@ let calculator = { a, b}
 */
 
 // Write your code here
+let user =  {
 
+   name: "John",
+   address: {
+     city: "Jakarta",
+     postalCode: "12345"
+   }
+ }
+ console.log(user.address.city) 
 
 
 
@@ -145,7 +169,15 @@ let calculator = { a, b}
 */
 
 // Write your code here
+let product = {
+  name: "Laptop",
+  price: "5000000",
+}
 
+product.price = 4500_000;
+product.stock = 10;
+
+console.log(product)
 
 
 
@@ -167,3 +199,25 @@ let calculator = { a, b}
 */
 
 // Write your code here
+let profile = {
+  name: "Alice",
+  age: 25,
+  email: "agung@gmail.com",
+  hobbies: ["Reading", "Ngoding", "Gaming"],
+  address: {
+  street: "",
+  city:"Jakarta",
+  country:"Indonesia"
+},
+  getFullProfile: function () {
+    return ` 
+    nama    : ${this.name}
+    age     : ${this.age}
+    email   : ${this.email}
+    hobbies : ${this.hobbies.join(",")}
+    alamat  : ${this.address.street}, ${this.address.city}, ${this.address.country}`
+    
+  }
+}
+
+console.log(profile.getFullProfile())
