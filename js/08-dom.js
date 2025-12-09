@@ -47,12 +47,12 @@ Buat file 08-dom.html dengan struktur ini, lalu link file ini di <script>
   <button id="increase">+</button>
   <button id="decrease">-</button>
   <button id="reset">Reset</button>
-  
+  console.log("JS Connected!");
   <script src="08-dom.js"></script>
 </body>
 </html>
 */
-
+console.log("JS Connected!");
 /*
 --------------------------------------------------------------------------------
  EXERCISE 8.1: Select and Change Text
@@ -66,7 +66,9 @@ Buat file 08-dom.html dengan struktur ini, lalu link file ini di <script>
 */
 
 // Write your code here
+let title = document.querySelector('#title')
 
+title.textContent = 'Welcome!'
 
 
 
@@ -89,7 +91,11 @@ Buat file 08-dom.html dengan struktur ini, lalu link file ini di <script>
 */
 
 // Write your code here
+let text = document.querySelector('#text')
 
+text.style.color = 'red'
+text.style.fontSize = '20px'
+text.style.fontWeight = 'bold'
 
 
 
@@ -111,7 +117,13 @@ Buat file 08-dom.html dengan struktur ini, lalu link file ini di <script>
 */
 
 // Write your code here
+let box = document.querySelector('#box')
 
+box.classList.add('highlight')
+
+setTimeout(() => {
+  box.classList.remove('highlight')
+}, 2000)
 
 
 
@@ -132,8 +144,12 @@ Buat file 08-dom.html dengan struktur ini, lalu link file ini di <script>
 */
 
 // Write your code here
+let btn = document.querySelector('#btn')
+let message = document.querySelector('#message')
 
-
+btn.addEventListener('click', function(){
+  message.textContent = 'Button clicked'
+})
 
 
 /*
@@ -153,9 +169,16 @@ Buat file 08-dom.html dengan struktur ini, lalu link file ini di <script>
 */
 
 // Write your code here
+let toggleBtn = document.querySelector ('#toggleBtn')
+let content = document.querySelector ('#content')
 
-
-
+toggleBtn.addEventListener('click', function() {
+   if (content.style.display === 'none') {
+    content.style.display = 'block'
+   } else {
+    content.style.display = 'none'
+   }
+});
 
 /*
 ================================================================================
@@ -178,3 +201,24 @@ Buat file 08-dom.html dengan struktur ini, lalu link file ini di <script>
 */
 
 // Write your code here
+let counterDisplay = document.getElementById ('#counter')
+let tambahBtn = document.getElementById ('#increase')
+let minesBtn = document.getElementById ('#decrease')
+let resetBtn = document.getElementById ('#reset')
+
+let counter = 0;
+
+tambahBtn.addEventListener('click', function(){
+  counter ++;
+  counterDisplay.textContent = counter;
+})
+
+minesBtn.addEventListener('click', function(){
+  counter ++;
+  counterDisplay.textContent = counter;
+})
+
+resetBtn.addEventListener('click', function(){
+  counter = 0;
+  counterDisplay.textContent = counter;
+})
