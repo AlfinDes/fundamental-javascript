@@ -13,8 +13,8 @@
 | 6 | Array | push/pop, forEach, search dasar | 🟩 |
 | 7 | Object | Property dasar, akses key, nested object sederhana | 🟩 |
 | 8 | DOM | querySelector, manipulasi text/style dasar | 🟩 |
-| 9 | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | 🔄 |
-| 10 | API Fetch | Fetch real public APIs, working with JSON data | ⬜ |
+| 9 | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | 🟩 |
+| 10 | API Fetch | Fetch real public APIs, working with JSON data | 🔄 |
 =======
 | No | Materi | Deskripsi Singkat | Student | Teacher |
 |----|-------------------------|----------------------------------------------------------------|----------|-----------|
@@ -24,10 +24,10 @@
 | 4  | Looping | for, while, do...while versi dasar | 🟩       |           |
 | 5  | Function | Function basic: parameter, return, arrow function sederhana | 🟩       |           |
 | 6  | Array | push/pop, forEach, search dasar | 🟩       |           |
-| 7  | Object | Property dasar, akses key, nested object sederhana | 🔄       |           |
-| 8  | DOM | querySelector, manipulasi text/style dasar | ⬜       |           |
-| 9  | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | ⬜       |           |
-| 10 | API Fetch | Fetch real public APIs, working with JSON data | ⬜       |           |
+| 7  | Object | Property dasar, akses key, nested object sederhana |   🟩     |           |
+| 8  | DOM | querySelector, manipulasi text/style dasar | 🟩       |           |
+| 9  | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | 🟩       |           |
+| 10 | API Fetch | Fetch real public APIs, working with JSON data |   🔄     |           |
 >>>>>>> a3be29eb76400233fc013aa0007fe68452a12738
 
 ### Legend
@@ -54,6 +54,18 @@ const customerName = "John Doe";
 const itemPrice = 15000;
 const totalPayment = 50000;
 ```
+  
+/*
+--------------------------------------------------------------------------------
+ EXERCISE 10.2: Fetch Random Dog Image
+--------------------------------------------------------------------------------
+ API: https://dog.ceo/api/breeds/image/random
+ 
+ Fetch 1 random dog image dan tampilkan URL-nya.
+ 
+ BONUS: Jika pakai HTML, tampilkan gambarnya dengan <img>
+
+
 
 ### 2. Gunakan camelCase
 Huruf pertama kecil, kata selanjutnya kapital.

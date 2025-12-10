@@ -38,9 +38,8 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
-
-
-
+console.log("Hello");
+setTimeout(() => console.log("World"), 2000); 
 
 /*
 --------------------------------------------------------------------------------
@@ -60,8 +59,16 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
-
-
+let number = 0;
+let interval = setInterval (() => {
+  number++;
+  console.log(number) // setInterval menjalankan kode berulang
+  
+  if (number === 3) {
+    clearInterval(interval)
+    console.log("berhenti") //clear interval kode berhenti
+  }
+}, 1000)
 
 
 /*
@@ -82,9 +89,19 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Success")
+  }, 1000) // 1 detik
+})
 
-
-
+myPromise
+ .then((hasil) => {
+  console.log(hasil) // then berhasil
+})
+ .catch((error) => {
+  console.log(error) // catch gagal
+})
 
 /*
 --------------------------------------------------------------------------------
@@ -106,7 +123,23 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+const num = (num) => {
+  return new Promise((resolve, reject) => {
+    if (num > 5) {
+      resolve("Number is greater than 5")
+    } else {
+      reject("Number is too small")
+    }
+  })
+}
 
+num(7)
+ .then((berhasil) => {
+  console.log(berhasil)
+})
+ .catch((error) => {
+  console.log(error)
+})
 
 
 
@@ -130,7 +163,20 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
-
+const yourPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Success")
+  }, 1000) // 1 detik
+})
+async function getData() {
+  try {
+   const result = await yourPromise
+   console.log(result)
+ } catch (error) {
+   console.log("Gagal", error)
+ }
+}
+getData()
 
 
 
@@ -160,3 +206,20 @@ Keep it simple and beginner-friendly!"
 */
 
 // Write your code here
+const getUserData = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const data = { name: "John", age: 25, city: "Jakarta" }
+      resolve(data)
+    },2000) // 2 detik
+  })
+}
+
+
+async function fetchUserData() {
+  console.log("Loading...") //loading dulu setelah 2 detik
+  const data = await getUserData()
+  console.log(`Name: ${data.name}, Age: ${data.age}, City: ${data.city}`) //menampilkan format data
+}
+
+fetchUserData()

@@ -6,16 +6,7 @@
 
 💬 UNDERSTAND THE CONCEPT FIRST - Ask AI:
 --------------------------------------------------------------------------------
-"I'm learning to fetch data from APIs in JavaScript. Before I start coding, help me understand:
-
-1. What is an API and how does it work?
-2. What is the fetch() function?
-3. How do I handle API responses with .then() or async/await?
-4. What is JSON and why do APIs use it?
-5. How do I handle errors when fetching data?
-
-Please use simple analogies like ORDERING FOOD or LIBRARY BOOKS.
-Keep it simple and beginner-friendly!"
+c
 --------------------------------------------------------------------------------
 
 ⚠️  IMPORTANT: Understand the concepts above BEFORE attempting the exercises!
@@ -49,9 +40,7 @@ Jalankan file ini di browser console atau buat HTML file
 
 // Write your code here
 
-
-
-
+  
 /*
 --------------------------------------------------------------------------------
  EXERCISE 10.2: Fetch Random Dog Image
