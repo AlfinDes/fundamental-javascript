@@ -39,6 +39,18 @@ Jalankan file ini di browser console atau buat HTML file
 */
 
 // Write your code here
+fetch("https://randomuser.me/api/")
+ .then(response => response.json())
+ .then(data => {
+  console.log(data)
+  
+  const user = data.results[0]
+  console.log("Nama:" , user.name.first, user.name.last)
+  console.log("Email:" , user.email)
+  console.log("Country:" , user.location.country)
+})
+ .catch(error => 
+  console.log("Error:", error))
 
   
 /*
@@ -59,9 +71,13 @@ Jalankan file ini di browser console atau buat HTML file
 */
 
 // Write your code here
-
-
-
+fetch('https://dog.ceo/api/breeds/image/random')
+ .then(response => response.json())
+ .then(data => {
+  console.log(data.message)
+})
+ .catch(error => 
+  console.error("Error:", error))
 
 /*
 --------------------------------------------------------------------------------
@@ -80,15 +96,35 @@ Jalankan file ini di browser console atau buat HTML file
  Expected Output:
  "Official Name: Republic of Indonesia"
  "Capital: Jakarta"
+ "Population: 273523 Expected Output:
+ "Official Name: Republic of Indonesia"
+ "Capital: Jakarta"
  "Population: 273523615"
+ "Currency: Indonesian rupiah"615"
  "Currency: Indonesian rupiah"
 --------------------------------------------------------------------------------
 */
 
 // Write your code here
-
-
-
+async function fetchCountry() {
+ try {
+    const response = await fetch("https://restcountries.com/v3.1/name/indonesia")
+  
+ const data = await response.json()
+ const country = data[0]
+ 
+ console.log("Official Name:", country.name.official)
+ console.log("Capital:", country.capital[0])
+ console.log("Population:", country.population)
+   
+ const currency = Object.values(country.currencies)[0]
+ console.log("currency:", currency.name)
+  
+} catch (error) {
+  console.log("Error:", error.message)
+}
+}
+fetchCountry()
 
 /*
 --------------------------------------------------------------------------------
@@ -112,9 +148,24 @@ Jalankan file ini di browser console atau buat HTML file
 */
 
 // Write your code here
-
-
-
+async function getJoke() {
+  try {
+    const response = await fetch (
+    "https://official-joke-api.appspot.com/jokes/programming/ten")
+    
+    const data = await response.json()
+    
+    data.forEach((joke, index) => {
+    console.log(`${index + 1}:`)
+    console.log(joke.setup)
+    console.log(joke.punchline)
+    })
+ 
+  } catch (error) {
+    console.log("error:", error)
+  }
+}
+getJoke()
 
 /*
 --------------------------------------------------------------------------------
@@ -137,7 +188,20 @@ Jalankan file ini di browser console atau buat HTML file
 */
 
 // Write your code here
-
+async function getGitHubUser(username) {
+  try {
+    const response = await fetch(`https://api.github.com/users/${username}`)
+    
+    const data = await response.json()
+    console.log("Username:", data.login)
+    console.log("Bio:", data.bio)
+    console.log("Public Repos:", data.public_repos)
+    console.log("Followers:", data.followers)
+  } catch (error) {
+    console.log("Error:", error.message)
+  }
+}
+ getGitHubUser("octocat")
 
 
 
@@ -168,3 +232,29 @@ Jalankan file ini di browser console atau buat HTML file
 */
 
 // Write your code here
+async function getWeather(city) {
+  
+  if (!city) {
+    console.log ("Masukan nama kota")
+    return
+  }
+  
+  try {
+    const response = await fetch(`https://wttr.in/${city}?format=j1`)
+    
+    if (!response.ok) {
+      throw new Error("Error mengambil data cuaca")
+    }
+    
+    const data = await response.json()
+    const weather = data.current_condition[0]
+
+    console.log(`Kota: ${city}`)
+    console.log(`Temperature: ${weather.temp_C} °C`)
+    console.log(`Condition: ${weather.weatherDesc[0].value}`)
+    console.log(`Humidity: ${weather.humidity} %`)
+  } catch (error) {
+    result.innerHTML = error.message
+  }
+}
+getWeather("Jakarta")

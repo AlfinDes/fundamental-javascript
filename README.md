@@ -14,7 +14,7 @@
 | 7 | Object | Property dasar, akses key, nested object sederhana | 🟩 |
 | 8 | DOM | querySelector, manipulasi text/style dasar | 🟩 |
 | 9 | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | 🟩 |
-| 10 | API Fetch | Fetch real public APIs, working with JSON data | 🔄 |
+| 10 | API Fetch | Fetch real public APIs, working with JSON data | 🟩 |
 =======
 | No | Materi | Deskripsi Singkat | Student | Teacher |
 |----|-------------------------|----------------------------------------------------------------|----------|-----------|
@@ -27,7 +27,7 @@
 | 7  | Object | Property dasar, akses key, nested object sederhana |   🟩     |           |
 | 8  | DOM | querySelector, manipulasi text/style dasar | 🟩       |           |
 | 9  | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | 🟩       |           |
-| 10 | API Fetch | Fetch real public APIs, working with JSON data |   🔄     |           |
+| 10 | API Fetch | Fetch real public APIs, working with JSON data |   🟩     |           |
 >>>>>>> a3be29eb76400233fc013aa0007fe68452a12738
 
 ### Legend
