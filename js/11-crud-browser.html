@@ -142,7 +142,20 @@
         placeholder="What needs to be done?"
         onkeypress="if(event.key==='Enter') addTodo()"
       >
+      <input
+        type="text"
+        placeholder="Cari todo..."
+        oninput="setSearch(this.value)"
+        >
       <button onclick="addTodo()">Add Todo</button>
+
+      <button onclick="setFilter('all')">All</button>
+      <button onclick="setFilter('active')">Active</button>
+      <button onclick="setFilter('completed')">Completed</button>
+
+      <button onclick="clearCompleted()">Clear Completed</button>
+      <button onclick="markAll(true)">Mark All Completed</button>
+      <button onclick="markAll(false)">Mark All Incompleted</button>
     </div>
 
     <ul class="todo-list" id="todoList"></ul>
@@ -201,7 +214,40 @@
     */
     
     // Write your code here
+function addTodo() {
+  const input = document.getElementById('todoInput')
+  const text = input.value.trim()
+  
+  if (text === '') {
+    alert('Todo tidak boleh kosong')
+    return
+  }
+  const todos = getTodos()
+  const newTodo= {
+    id: Date.now(),
+    title: text,
+    completed: false
+  }
+  todos.push(newTodo)
+  saveTodos(todos)
+  
+  input.value= ''
+  renderTodos()
+}
 
+function renderTodos() {
+  const list = document.getElementById('todoList')
+  list.innerHTML = ''
+  
+  const todos = getTodos()
+  
+  todos.forEach(todo => {
+    const li = document.createElement('li')
+    li.textContent = todo.title
+    list.appendChild(li)
+  })
+}
+renderTodos()
 
     /*
     --------------------------------------------------------------------------------
@@ -222,7 +268,38 @@
     */
     
     // Write your code here
+function renderTodos() {
+  let todoList = document.getElementById('todoList')
+  let todos = getTodos()
+  
+  todoList.innerHTML = ''
 
+  if (todos.length === 0) {
+    todoList.innerHTML = '<li>Todo kosong</li>'
+    updateStats()
+    return
+  }
+
+  todos.forEach(todo => {
+    let li = document.createElement('li')
+
+    li.innerHTML = `
+      <span style="text-decoration: ${todo.completed ? 'line-through' : 'none'}">
+        ${todo.title}
+      </span>
+      <button onclick="toggleComplete(${todo.id})">
+        ${todo.completed ? 'Undo' : 'Complete'}
+      </button>
+      <button onclick="deleteTodo(${todo.id})">
+        Delete
+      </button>
+    `
+
+    todoList.appendChild(li)
+  })
+
+  updateStats()
+}
 
     /*
     --------------------------------------------------------------------------------
@@ -242,7 +319,19 @@
     */
     
     // Write your code here
-
+    function toggleComplete(id){
+  const todos = getTodos()
+  const updateTodos = todos.map(todo => {
+    if (todo.id === id){
+    return {
+      ...todo, completed: !todo.completed
+    }
+  }
+    return todo
+  })
+  saveTodos (updateTodos)
+  renderTodos()
+}
 
     /*
     --------------------------------------------------------------------------------
@@ -261,6 +350,14 @@
     */
     
     // Write your code here
+    function deleteTodo(id){
+  let todos = getTodos()
+  
+  let updateTodos = todos.filter(todo => todo.id !== id)
+  
+  saveTodos(updateTodos)
+  renderTodos()
+}
 
 
     /*
@@ -280,8 +377,15 @@
     */
     
     // Write your code here
-
-
+    function updateStats(){
+  let todos = getTodos()
+  
+  let total = todos.length //semua todos
+  let completed = todos.filter(todo => todo.completed).length // todo yg selesai
+  let remaining = todos.filter(todo => !todo.completed).length // todo yg belum selesai
+  
+  document.getElementById('stats').textContent = `Total: ${total} | Completed: ${completed} | Remaining: ${remaining}`
+}
     /*
     ================================================================================
      BONUS CHALLENGE 11: Advanced Features
@@ -301,6 +405,154 @@
 
     // Initialize app - panggil renderTodos() saat halaman load
     // Write your code here
+let filter = 'all'
+let keyword = ''
+
+function getTodos() {
+  return JSON.parse(localStorage.getItem('todos')) || []
+}
+
+function saveTodos(todos){
+  localStorage.setItem('todos', JSON.stringify(todos))
+}
+
+function addTodo() {
+  let input = document.getElementById('todoInput')
+  let text = input.value.trim()
+  if (!text) {
+    alert('todo kosong')
+    return
+  }
+  
+  const todos = getTodos()
+  todos.push({
+    id:Date.now(),
+    title: text,
+    completed: false
+  })
+  
+  saveTodos(todos)
+  input.value = ''
+  renderTodos()
+}
+
+function renderTodos() {
+  const todoList = document.getElementById('todoList')
+  let todos = getTodos()
+
+  if(filter === 'active') todos = todos.filter(todo => !todo.completed) // belum selesai
+  if(filter === 'completed') todos = todos.filter(todo => todo.completed) // sudah selesai
+
+  if(keyword) todos = todos.filter(todo => todo.title.toLowerCase().includes(keyword))
+
+  todoList.innerHTML = ''  
+
+  if(todos.length === 0) {
+    todoList.innerHTML = '<li>Todo kosong</li>' 
+    updateStats()
+    return
+  }
+
+  todos.forEach(todo => {
+    const li = document.createElement('li')
+    li.className = todo.completed ? 'todo-item completed' : 'todo-item'
+
+    const span = document.createElement('span')
+    span.textContent = todo.title
+    span.className = 'todo-text'
+    span.addEventListener('dblclick', () => editTodo(todo.id, span))
+    li.appendChild(span)
+
+    const btnComplete = document.createElement('button')
+    btnComplete.textContent = todo.completed ? 'Undo' : 'Complete'
+    btnComplete.className = 'btn-complete'
+    btnComplete.onclick = () => toggleComplete(todo.id) 
+    li.appendChild(btnComplete)
+
+    const btnDelete = document.createElement('button')
+    btnDelete.textContent = 'Delete'
+    btnDelete.className = 'btn-delete'
+    btnDelete.onclick = () => deleteTodo(todo.id) 
+    li.appendChild(btnDelete)  
+     
+    todoList.appendChild(li)
+  })
+
+  updateStats()
+}
+
+function toggleComplete(id) {
+  const todos = getTodos().map(todo => todo.id === id ? {...todo, completed: !todo.completed } : todo)
+  
+  saveTodos(todos)
+  renderTodos()
+}
+
+function deleteTodo(id) {
+  const todos = getTodos().filter(todo => todo.id !== id)
+  saveTodos(todos)
+  renderTodos()
+}
+
+function clearCompleted() {
+  const todos = getTodos().filter(todo => !todo.completed)
+  saveTodos(todos)
+  renderTodos()
+}
+
+function editTodo(id, span) {
+  const todos = getTodos()
+  const todo = todos.find(todo => todo.id === id)
+  if (!todo) 
+    return
+  
+  let input = document.createElement('input')
+  input.type = 'text'
+  input.value = todo.title
+  input.className = 'todo-text'
+  
+  span.replaceWith(input)
+  input.focus()
+  
+  input.onblur = () => {
+    todo.title = input.value.trim() || todo.title
+    saveTodos(todos)
+    renderTodos()
+  }
+  input.onkeypress = e => {
+    if(e.key === 'Enter') input.blur()
+  }
+}
+
+function updateStats() {
+  let todos = getTodos()
+  let total = todos.length
+  let completed = todos.filter(todo => todo.completed).length
+  let remaining = total - completed
+  
+  document.getElementById('stats').textContent = 
+    `Total: ${total} | Completed: ${completed} | Remaining ${remaining}`
+}
+
+function setFilter(value) {
+  filter = value
+  renderTodos()
+}
+
+function setSearch(value) {
+  keyword = value.toLowerCase()
+  renderTodos()
+}
+
+function markAll(status) {
+  const todos = getTodos().map(todo => ({
+    ...todo, completed: status
+  }))
+  saveTodos(todos)
+  renderTodos()
+}
+
+renderTodos() 
   </script>
 </body>
 </html>
