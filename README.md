@@ -2,33 +2,19 @@
 
 ## 📚 JavaScript Fundamentals (1–10)
 
-<<<<<<< HEAD
-| No | Materi | Deskripsi Singkat | Progress |
-|----|-------------------------|----------------------------------------------------------------|----------|
-| 1 | Variabel & Tipe Data | var, let, const, tipe data dasar (string, number, boolean) | 🟩 |
-| 2 | Operator | Aritmatika, logika, perbandingan, assignment, ternary | 🟩 |
-| 3 | Control Flow | if/else dasar, switch sederhana | 🟩 |
-| 4 | Looping | for, while, do...while versi dasar | 🟩 |
-| 5 | Function | Function basic: parameter, return, arrow function sederhana | 🟩 |
-| 6 | Array | push/pop, forEach, search dasar | 🟩 |
-| 7 | Object | Property dasar, akses key, nested object sederhana | 🟩 |
-| 8 | DOM | querySelector, manipulasi text/style dasar | 🟩 |
-| 9 | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | 🟩 |
-| 10 | API Fetch | Fetch real public APIs, working with JSON data | 🟩 |
-=======
 | No | Materi | Deskripsi Singkat | Student | Teacher |
 |----|-------------------------|----------------------------------------------------------------|----------|-----------|
-| 1  | Variabel & Tipe Data | var, let, const, tipe data dasar (string, number, boolean) | 🟩       | 🏆        |
-| 2  | Operator | Aritmatika, logika, perbandingan, assignment, ternary | 2.1 ✅, 2.2 ✅❌✅, 2.3 ❌, 2.4 ✅, 2.5 ❌, Bonus ❌       |           |
-| 3  | Control Flow | if/else dasar, switch sederhana | 🟩       |           |
-| 4  | Looping | for, while, do...while versi dasar | 🟩       |           |
-| 5  | Function | Function basic: parameter, return, arrow function sederhana | 🟩       |           |
-| 6  | Array | push/pop, forEach, search dasar | 🟩       |           |
-| 7  | Object | Property dasar, akses key, nested object sederhana |   🟩     |           |
-| 8  | DOM | querySelector, manipulasi text/style dasar | 🟩       |           |
-| 9  | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | 🟩       |           |
-| 10 | API Fetch | Fetch real public APIs, working with JSON data |   🟩     |           |
->>>>>>> a3be29eb76400233fc013aa0007fe68452a12738
+| 1  | Variabel & Tipe Data | var, let, const, tipe data dasar (string, number, boolean) | 1.1, 1.2, 1.4, 1.5 ✅, 1.3 ⚠️ (condition prlu di kasih operator perbandinngan), Bonus ⚠️ (ad yg perlu va buat tanda varible bru) |         |
+| 2  | Operator | Aritmatika, logika, perbandingan, assignment, ternary | 2.1 ✅, 2.2 ✅, 2.3 ✅, 2.4 ✅, 2.5(conditionya) ❌, Bonus ❌(if else nya)       |           |
+| 3  | Control Flow | if/else dasar, switch sederhana | 3.1 ✅, 3.2 ✅, 3.3 ✅, 3.4 ❌ (Switch), 3.5 ✅, Bonus ✅      |           |
+| 4  | Looping | for, while, do...while versi dasar | ✅      |      🏆     |
+| 5  | Function | Function basic: parameter, return, arrow function sederhana | 5.1-5.4 ✅, 5.5 ❌ (Hardcode), Bonus ⚠️ (Var nya jngan di return)       |           |
+| 6  | Array | push/pop, forEach, search dasar | ✅  |      🏆     |
+| 7  | Object | Property dasar, akses key, nested object sederhana | 7.1, 7.2, 7.4, 7.5 ✅, 7.3 ❌ (Wrong implementation), Bonus ✅     |           |
+| 8  | DOM | querySelector, manipulasi text/style dasar | 8.1-8.5 ✅, Bonus ❌ (querySelector id)       |           |
+| 9  | Asynchronous JavaScript | setTimeout & promise basic untuk pemula | ✅       |      🏆     |
+| 10 | API Fetch | Fetch real public APIs, working with JSON data | 10.1-10.5 ✅, Bonus ⚠️ (innerhtml nya blum perlu)     |           |
+| 11 | CRUD Browser | LocalStorage, DOM Manipulation | ✅ (Note: Ada func yg sma/duplicate) |   🏆        |
 
 ### Legend
 **Progress**  
