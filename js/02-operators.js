@@ -181,8 +181,8 @@ console.log(hasil)
 */
 
 // Write your code here
-let stockProduk = "5";
-let status = stockProduk >=  Number (5) ? "Tersedia" : "Habis";
+let stockProduk = 5;
+let status = stockProduk > 0 ? "Tersedia" : "Habis";
 
 console.log("stok = ", + stockProduk, status)
 
@@ -208,16 +208,20 @@ console.log("stok = ", + stockProduk, status)
 
 // Write your code here
 let nilai = 85;
+let grade = "";
 
-
-if (nilai >=90 && nilai <= 100) {
-  console.log ("nilai:", nilai, "Grade A")
-} else if (nilai >= 75 && nilai <= 89) {
-  console.log ("nilai:", nilai, "Grade: B")
-} else if (nilai >= 65 && nilai <= 74) {
-  console.log ("nilai:", nilai, "Grade: C")
-} else if (nilai >= 60 && nilai <= 64) {
-  console.log ("nilai:",nilai, "Grade: D")
-} else if (nilai >= 0 && nilai < 60) {
-  console.log ("nilai:", nilai, "Grade: E")
+if (nilai >= 90 && nilai <= 100) {
+  grade = "A"
+} else if (nilai >=80) {
+  grade = "B"
+} else if (nilai >= 70) {
+  grade = "C"
+} else if (nilai >= 60) {
+  grade = "D"
+} else if (nilai < 60 ) {
+  grade = "E"
+} else {
+  console.log("Nilai tidak valid")
 }
+
+console.log(`Nilai: ${nilai}, Grade: ${grade}`)

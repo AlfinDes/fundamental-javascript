@@ -63,7 +63,7 @@ console.log(`Total: Rp${total}`)
 */
 
 // Write your code here
-let isMember = "Member";
+let isMember = true;
 
 if (isMember){
     console.log("Anda mendapatkan diskon member")
@@ -152,10 +152,12 @@ let roti1 = 8000;
 let qty = 2;
 let susu2 = 5000;
 let isMember1 = true;
+
 let cekDiskon = 0.1;
 let potongan = 0;
 
 let totalBelanja1 = (roti1 * qty) + susu2;
+let totalBayar1 = totalBelanja1;
 
 if (isMember1){
   potongan = totalBelanja1 * cekDiskon;

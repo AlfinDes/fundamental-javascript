@@ -254,7 +254,7 @@ async function getWeather(city) {
     console.log(`Condition: ${weather.weatherDesc[0].value}`)
     console.log(`Humidity: ${weather.humidity} %`)
   } catch (error) {
-    result.innerHTML = error.message
+    console.log("Error:",error.message)
   }
 }
 getWeather("Jakarta")

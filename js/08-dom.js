@@ -201,24 +201,26 @@ toggleBtn.addEventListener('click', function() {
 */
 
 // Write your code here
-let counterDisplay = document.getElementById ('#counter')
-let tambahBtn = document.getElementById ('#increase')
-let minesBtn = document.getElementById ('#decrease')
-let resetBtn = document.getElementById ('#reset')
+let counterDisplay = document.getElementById ('counter')
+let tambahBtn = document.getElementById ('increase')
+let minusBtn = document.getElementById ('decrease')
+let resetBtn = document.getElementById ('reset')
 
-let counter = 0;
+let counter = 0
+counterDisplay.textContent = counter
 
 tambahBtn.addEventListener('click', function(){
-  counter ++;
-  counterDisplay.textContent = counter;
-})
+  counter ++
+  counterDisplay.textContent = counter}
+)
 
-minesBtn.addEventListener('click', function(){
-  counter ++;
-  counterDisplay.textContent = counter;
+minusBtn.addEventListener('click', function(){
+  if (counter > 0) {
+  counter --
+  counterDisplay.textContent = counter}
 })
 
 resetBtn.addEventListener('click', function(){
-  counter = 0;
-  counterDisplay.textContent = counter;
+  counter = 0
+  counterDisplay.textContent = counter
 })

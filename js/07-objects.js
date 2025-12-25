@@ -96,24 +96,16 @@ console.log(student["name"])
 
 // Write your code here
 let calculator = {
-  a: 0,
-  b: 0,
-
-  add: function (x, y) {
-    this.a = x
-    this.b = y
+  add(a, b) {
+    return a + b
   },
-  multiplay: function (){
-    console.log("hasil: ", this.a * this.b)
-  },
-  tambah: function (){
-    console.log("hasil: ", this.a + this.b)
-  },
+  multiplay(a, b) {
+    return a * b
+  }
 }
 
-calculator.add(5, 3)
-calculator.tambah()
-calculator.multiplay()
+console.log(calculator.add(5, 3))
+console.log(calculator.multiplay(5, 3))
 
 
 /*

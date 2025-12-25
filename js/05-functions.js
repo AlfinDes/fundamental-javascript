@@ -132,8 +132,8 @@ function hitungDiskon(harga, persenDiskon){
   return harga - (harga * persenDiskon / 100);
 }
 
-hitungDiskon (100000, 20);
-console.log(80000)
+let totalHarga = hitungDiskon (100000, 20);
+console.log(totalHarga)
 
 /*
 ================================================================================
@@ -155,11 +155,14 @@ console.log(80000)
 
 // Write your code here
 function celsiusToFahrenheit(celsius){
-  return F = (celsius * 9/5) + 32;
-}
-function fahrenheitToCelcius(fahrenheit){
-  return C = (fahrenheit- 32) * 5/9;
+  var fahrenheit = (celsius * 9/5) + 32;
+  console.log("celsiusToFahrenheit", fahrenheit)
 }
 
-console.log("celsiusToFahrenheit", celsiusToFahrenheit(100))
-console.log("FahrenheitToCelsius", fahrenheitToCelcius(212))
+function fahrenheitToCelsius(fahrenheit) {
+  var celsius = (fahrenheit - 32) * 5 / 9
+  console.log("fahrenheitToCelsius", celsius)
+}
+
+celsiusToFahrenheit(100)
+fahrenheitToCelsius(212)

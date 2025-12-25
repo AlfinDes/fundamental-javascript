@@ -407,152 +407,50 @@ function renderTodos() {
     // Write your code here
 let filter = 'all'
 let keyword = ''
-
-function getTodos() {
-  return JSON.parse(localStorage.getItem('todos')) || []
-}
-
-function saveTodos(todos){
-  localStorage.setItem('todos', JSON.stringify(todos))
-}
-
-function addTodo() {
-  let input = document.getElementById('todoInput')
-  let text = input.value.trim()
-  if (!text) {
-    alert('todo kosong')
-    return
-  }
-  
+function editTodo(id, span) {
   const todos = getTodos()
-  todos.push({
-    id:Date.now(),
-    title: text,
-    completed: false
-  })
-  
-  saveTodos(todos)
-  input.value = ''
-  renderTodos()
-}
-
-function renderTodos() {
-  const todoList = document.getElementById('todoList')
-  let todos = getTodos()
-
-  if(filter === 'active') todos = todos.filter(todo => !todo.completed) // belum selesai
-  if(filter === 'completed') todos = todos.filter(todo => todo.completed) // sudah selesai
-
-  if(keyword) todos = todos.filter(todo => todo.title.toLowerCase().includes(keyword))
-
-  todoList.innerHTML = ''  
-
-  if(todos.length === 0) {
-    todoList.innerHTML = '<li>Todo kosong</li>' 
-    updateStats()
+  const todo = todos.find(t => t.id === id)
+  if (!todo) 
     return
-  }
 
-  todos.forEach(todo => {
-    const li = document.createElement('li')
-    li.className = todo.completed ? 'todo-item completed' : 'todo-item'
+  let input = document.createElement('input');
+  input.type = 'text';
+  input.value = todo.title;
+  input.className = 'todo-text';
 
-    const span = document.createElement('span')
-    span.textContent = todo.title
-    span.className = 'todo-text'
-    span.addEventListener('dblclick', () => editTodo(todo.id, span))
-    li.appendChild(span)
+  span.replaceWith(input);
+  input.focus();
 
-    const btnComplete = document.createElement('button')
-    btnComplete.textContent = todo.completed ? 'Undo' : 'Complete'
-    btnComplete.className = 'btn-complete'
-    btnComplete.onclick = () => toggleComplete(todo.id) 
-    li.appendChild(btnComplete)
-
-    const btnDelete = document.createElement('button')
-    btnDelete.textContent = 'Delete'
-    btnDelete.className = 'btn-delete'
-    btnDelete.onclick = () => deleteTodo(todo.id) 
-    li.appendChild(btnDelete)  
-     
-    todoList.appendChild(li)
-  })
-
-  updateStats()
-}
-
-function toggleComplete(id) {
-  const todos = getTodos().map(todo => todo.id === id ? {...todo, completed: !todo.completed } : todo)
-  
-  saveTodos(todos)
-  renderTodos()
-}
-
-function deleteTodo(id) {
-  const todos = getTodos().filter(todo => todo.id !== id)
-  saveTodos(todos)
-  renderTodos()
+  input.onblur = () => {
+    todo.title = input.value.trim() || todo.title;
+    saveTodos(todos);
+    renderTodos();
+  };
+  input.onkeypress = e => { 
+    if(e.key === 'Enter') input.blur(); };
 }
 
 function clearCompleted() {
-  const todos = getTodos().filter(todo => !todo.completed)
-  saveTodos(todos)
-  renderTodos()
-}
-
-function editTodo(id, span) {
-  const todos = getTodos()
-  const todo = todos.find(todo => todo.id === id)
-  if (!todo) 
-    return
-  
-  let input = document.createElement('input')
-  input.type = 'text'
-  input.value = todo.title
-  input.className = 'todo-text'
-  
-  span.replaceWith(input)
-  input.focus()
-  
-  input.onblur = () => {
-    todo.title = input.value.trim() || todo.title
-    saveTodos(todos)
-    renderTodos()
-  }
-  input.onkeypress = e => {
-    if(e.key === 'Enter') input.blur()
-  }
-}
-
-function updateStats() {
-  let todos = getTodos()
-  let total = todos.length
-  let completed = todos.filter(todo => todo.completed).length
-  let remaining = total - completed
-  
-  document.getElementById('stats').textContent = 
-    `Total: ${total} | Completed: ${completed} | Remaining ${remaining}`
+  const todos = getTodos().filter(todo => !todo.completed);
+  saveTodos(todos);
+  renderTodos();
 }
 
 function setFilter(value) {
-  filter = value
-  renderTodos()
+  filter = value;
+  renderTodos();
 }
 
 function setSearch(value) {
-  keyword = value.toLowerCase()
-  renderTodos()
+  keyword = value.toLowerCase();
+  renderTodos();
 }
 
 function markAll(status) {
-  const todos = getTodos().map(todo => ({
-    ...todo, completed: status
-  }))
-  saveTodos(todos)
-  renderTodos()
+  const todos = getTodos().map(t => ({ ...t, completed: status }));
+  saveTodos(todos);
+  renderTodos();
 }
-
-renderTodos() 
   </script>
 </body>
 </html>
