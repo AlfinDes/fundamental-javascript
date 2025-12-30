@@ -38,7 +38,7 @@ const express = require('express');
 const app = express();
 
 // Tentukan nomor port
-const PORT = 3000;
+const PORT = 4000;
 
 // ============================================
 // ROUTES (RUTE)
@@ -67,13 +67,13 @@ app.get('/api/info', (req, res) => {
 // START SERVER (JALANKAN SERVER)
 // ============================================
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
-  console.log(`Coba kunjungi:`);
-  console.log(`  - http://localhost:${PORT}/`);
-  console.log(`  - http://localhost:${PORT}/about`);
-  console.log(`  - http://localhost:${PORT}/api/info`);
-});
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
+//   console.log(`Coba kunjungi:`);
+//   console.log(`  - http://localhost:${PORT}/`);
+//   console.log(`  - http://localhost:${PORT}/about`);
+//   console.log(`  - http://localhost:${PORT}/api/info`);
+// });
 
 // ============================================
 // LATIHAN
@@ -86,3 +86,26 @@ app.listen(PORT, () => {
  * 3. Ubah PORT menjadi 4000 dan restart server
  * 4. Apa yang terjadi jika kamu mengunjungi route yang tidak ada? (misal: /random)
  */
+
+app.get('/contact', (req, res) => {
+  res.send('Hubungi kami di: email@example.com');
+});
+
+app.get('/api/status', (req, res) => {
+  res.json({
+    status: 'online',
+    uptime: '5 menit'
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`server berjalan di http://localhost:${PORT}`);
+  console.log(`coba kunjungi`);
+  console.log(`  - http://localhost:${PORT}/`);
+  console.log(`  - http://localhost:${PORT}/contact`);
+  console.log(`  - http://localhost:${PORT}/api/status`);
+});
+
+app.use((req, res) => {
+  res.status(404).send(`Halaman tidak di temukan`)
+})
