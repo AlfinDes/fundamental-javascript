@@ -176,3 +176,53 @@ app.listen(PORT, () => {
  *   "email": "charlie@example.com"
  * }
  */
+let users1 = [
+  { id: 1, name: 'Charlie', email: 'charlie@example.com' },
+];
+// Topik 1
+app.get('/users/search', (req, res) => {
+    const name = req.query.name;
+  
+  if (!name) {
+    return res.status(400).json({
+      success: false,
+      message: 'Name harus di isi'
+    });
+  }
+
+  const user = users.find(
+    u => u.name.toLowerCase() === name.toLowerCase()
+  );
+
+  if(!user) {
+    return res.status(404).json({
+      success: false,
+      message: 'User tidak ditemukan'
+    });
+  }
+  
+  res.json({
+    success: true,
+    data: user
+  });
+});
+// Topik 2
+app.post('/users', (req, res) => {
+  const {nama, email} = req.body;
+ 
+  if(!nama || !email) {
+    return res.status(400).json({
+      message: 'Nama dan email kosong'
+    });
+  };
+
+  res.status(201).json({
+    message: 'Nama dan email valid'
+  });
+});
+
+// Topik 3
+app.post('/product', (req, res) => {
+  const data = req.body;
+  res.send('Data di tambahkan')
+});
