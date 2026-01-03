@@ -192,3 +192,10 @@ app.listen(PORT, () => {
  * 3. Buat middleware rate-limiting (maksimal 5 request per menit)
  * 4. Test route /dashboard dengan dan tanpa authorization header
  */
+ 
+// topik 1
+app.post('/login', (req, res) => {
+  const log = req.body;
+  res.send('data di kirim')
+
+})
