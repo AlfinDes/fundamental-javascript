@@ -34,6 +34,7 @@ latihan di bawah. Saya ingin memahami konsepnya dulu.
  */
 
 const express = require('express');
+const { default: rateLimit } = require('express-rate-limit');
 const app = express();
 
 const PORT = 3000;
@@ -194,8 +195,61 @@ app.listen(PORT, () => {
  */
  
 // topik 1
+const logRequestBody = (req, res, next) => {
+  if (req.method === 'POST') {
+    console.log('POST body =>', req.body);
+  }
+  next();
+};
+
+app.use(logRequestBody);
+
 app.post('/login', (req, res) => {
   const log = req.body;
-  res.send('data di kirim')
+  res.send('data di kirim');
 
-})
+});
+
+// topik 2
+app.use((req, res, next) => {
+  res.setHeader('File-Stastic', 'Belajar-Exspress')
+  next();
+});
+
+// topik 3
+const limiting = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max:5,
+  messeage: {
+    status: 429,
+    error: "Terlalu banyak reques"
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.use(limiting);
+app.get("/", (req, res) => {
+  res.send("Request di terima");
+});
+
+// topik 4
+const authMiddleware = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader) {
+    return res.status(401).json({
+      error: "Authorization header tidak ada",
+    });
+  }
+
+  next();
+};
+
+app.get("/dashboard", authMiddleware, (req, res) => {
+  res.status(200).json({
+    message: "Selamat datang di dashboard",
+    user: req.user,
+  });
+});
+

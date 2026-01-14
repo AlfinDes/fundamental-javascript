@@ -107,5 +107,5 @@ app.listen(PORT, () => {
 });
 
 app.use((req, res) => {
-  res.status(404).send(`Halaman tidak di temukan`)
-})
+  res.status(404).send(`Halaman tidak di temukan`);
+});

@@ -224,5 +224,5 @@ app.post('/users', (req, res) => {
 // Topik 3
 app.post('/product', (req, res) => {
   const data = req.body;
-  res.send('Data di tambahkan')
+  res.send('Data di tambahkan');
 });
